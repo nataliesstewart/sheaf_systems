@@ -115,15 +115,16 @@ The following dense monics will be useful.
   \]
   It quickly follows from Proposition \ref{Dense proposition} that the monic $U_{f_n(s),I_{\geq n}} \rightarrowtail U_{s,I}$ is dense.
 
-  Similarly, for $I$ a $\ZZ$-diagram and $I_{\geq 0}$ its truncation to $\NN$, the monic $U_{s,I_{\geq 0}} \rightarrowtail V_{s,I}$ is monic.
+  Similarly, for $I$ a $\ZZ$-diagram and $I_{\geq 0}$ its truncation to $\NN$, the monic $U_{s,I_{\geq 0}} \rightarrowtail V_{s,I}$ is monic.\footnote{\color{magenta} The latter subsumes the former.}
 \end{example}
 
+One characterization of the closure of $F\subset G$ is the largest closed subobject of $G$ containing $F$ as a dense subobject.\footnote{\color{magenta} Is this true?}
 Using this and Proposition \ref{Dense proposition}, we have the following lemma.
 \begin{lemma}
   Let $F \subset G$ be a $p$-dynamical subsystem.
-  Then, the closure 
+  Then, we may compute the closure of $F$ as \textbf{CHARACTERIZATION GOES HERE.} 
   \[
-    a
+    \neg \neg F
   \]
 \end{lemma}
 
@@ -134,6 +135,39 @@ We say that a $p$-dynamical system $F$ is \emph{ancient} if all transition funct
   A $p$-dynamical system $F$ is a $\neg\neg$-sheaf iff it is ancient and remembers history.
 \end{proposition}
 \begin{proof}
+  We first verify the statement for separated presheaves.
+  We have to verify that, $F$ remembers history iff for all dense monics $A \rightarrowtail E$, the induced map
+  \[
+    \Hom_{\sC_p}(E,F) \rightarrow \Hom_{\sC_p}(A,F)
+  \]
+  is monic.
+
+  First suppose that $F$ does not remember history, and there are two distinct states $s,t \in F(i)$ and a morphism $f:i \rightarrow j$ such that $f(s) = f(t)$.
+  Then, since $U_s = U_t$ as (dense) subobjects of $U_{f(s)} = U_{f(t)}$, we have two distinct extensions
+  \[
+    \begin{tikzcd}
+      U_{s} \arrow[rd,tail] \arrow[rrd,tail, bend left]\\
+      & U_{f(s) = f(t)} \arrow[r,tail]& F\\
+      U_{t} \arrow[ru,tail] \arrow[rru, bend right]
+    \end{tikzcd}
+  \]
+  so that $F$ is not separated.
+
+  Conversely, suppose that $F$ does remember history, and suppose we have two morphisms $\varphi,\varphi':E \rightarrow F$ which each restrict to $A$ identically.
+  At position $j$ possessing morphism $f:j \rightarrow i$, this is represented by commuting parallel morphisms 
+  \[
+    \begin{tikzcd}
+      E(i) \arrow[r]
+      & F(i)\\
+      E(j) \arrow[u] \arrow[r, transform canvas={yshift = .4ex}]  \arrow[r, transform canvas={yshift = -.4ex}]
+      & F(j) \arrow[u,tail]
+    \end{tikzcd}
+  \]
+  which must coincide since the morphism $F(j) \rightarrowtail F(i)$ is monic.\footnote{\color{magenta} This needs to be corrected later;
+it isn't necessarily the case that any $E(i)$ is totally subsumed by $A$.
+Instead, we have to make some argument using a preimage.} 
+
+   
 \end{proof}
 
 \end{document}
