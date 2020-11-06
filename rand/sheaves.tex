@@ -165,7 +165,15 @@ We say that a $p$-dynamical system $F$ is \emph{ancient} if all transition funct
   \]
   which must coincide since the morphism $F(j) \rightarrowtail F(i)$ is monic.\footnote{\color{magenta} This needs to be corrected later;
 it isn't necessarily the case that any $E(i)$ is totally subsumed by $A$.
-Instead, we have to make some argument using a preimage.} 
+Instead, we have to make some argument using colimits, which I don't particularly want to do..}
+
+  For $\neg\neg$-sheaves, it suffices to prove that the morphism $\Hom_{\sC_p}(E,F) \rightarrow \Hom_{\sC_p}(A,F)$ is epic iff $F$ is ancient.
+  This will work by a similar argument;
+  if $F$ is not ancient, we may pick a state $s \in \coprod_i F(i)$ and morphism $f:j \rightarrow i$ such that $F(j)$ is nonempty (say, containing $t \in F(j)$) and such that $s \not\in \operatorname{im} f$, and consider the embedding $U_s \rightarrowtail F$.
+  Then, $U_s$ is isomorphic as a $p$-dynamical system to $U_{f(t)} \subset U_t$, but there is no morphism $U_t \rightarrow F$ extending the given morphism.
+
+  Conversely, if $F$ is ancient, we probably have to assume AoC, and then just choose preimages to extend a morphism $A \rightarrow F$ to $E$.
+  I'll fill this in fully later.
 
    
 \end{proof}
